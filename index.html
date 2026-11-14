@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>NCM Seguridad Integral | Soluciones de seguridad a medida</title>
+  <meta name="description" content="Sistemas de alarma inalámbricos Ajax y cableados Paradox, cámaras y control de accesos con instalación profesional en Mercedes, Soriano.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0a0a;--panel:#141414;--panel2:#1b1b1b;--line:#292929;--white:#fff;--soft:#d0d0d0;--muted:#999;--gold:#e0b84f;--max:1200px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:105px}
+    body{background:var(--bg);color:var(--white);font-family:Montserrat,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}a{color:inherit}
+    .container{width:min(100% - 40px,var(--max));margin-inline:auto}
+    .header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:flex;align-items:center;gap:15px;text-decoration:none;min-width:0}
+    .brand img{width:auto;height:60px;max-width:220px;object-fit:contain}
+    .brand-copy{display:flex;flex-direction:column;line-height:1.12}
+    .brand-copy strong{font-size:1.55rem;letter-spacing:.09em}
+    .brand-copy span{font-size:.76rem;color:var(--gold);letter-spacing:.16em;text-transform:uppercase;margin-top:5px;white-space:nowrap}
+    .nav-links{display:flex;align-items:center;gap:clamp(16px,3vw,34px)}
+    .nav-links a{text-decoration:none;color:var(--soft);font-size:.9rem;font-weight:600;transition:color .2s}
+    .nav-links a:hover{color:var(--gold)}
+    .menu-toggle{display:none;background:var(--panel);border:1px solid var(--line);color:white;border-radius:9px;padding:9px 13px;font-size:1.35rem}
+    .hero{padding:88px 0 78px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#242424 0,transparent 65%)}
+    .hero-logo{width:min(310px,70vw);height:auto;margin:0 auto 34px;object-fit:contain}
+    .eyebrow{color:var(--gold);font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:15px}
+    h1{font-size:clamp(2.2rem,5.5vw,4.3rem);line-height:1.12;letter-spacing:-.045em;max-width:900px;margin:0 auto 22px}
+    .hero p{max-width:760px;margin:0 auto;color:var(--soft);font-size:clamp(1rem,2vw,1.2rem)}
+    .actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:32px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:14px 23px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid transparent;cursor:pointer;font:inherit;font-weight:700;transition:.2s}
+    .btn-gold{background:var(--gold);color:#111}.btn-gold:hover{background:#f0cb68;transform:translateY(-2px)}
+    .btn-outline{border-color:#555;color:white;background:transparent}.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:35px}
+    .trust span{padding:8px 15px;border:1px solid var(--line);background:#151515;border-radius:30px;color:var(--soft);font-size:.84rem}
+    .section{padding:76px 0}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 38px}
+    .section-head h2{font-size:clamp(1.8rem,4vw,2.65rem);line-height:1.2;margin-bottom:12px}
+    .section-head p{color:var(--muted)}
+    .gold-line{width:55px;height:3px;background:var(--gold);margin:18px auto 0;border-radius:5px}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .solution{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+    .solution:hover{transform:translateY(-5px);border-color:#806b36}
+    .solution img{width:100%;height:225px;object-fit:cover;background:#202020}
+    .solution-content{padding:24px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;flex:1}
+    .solution small{color:var(--gold);text-transform:uppercase;letter-spacing:.13em;font-weight:700}
+    .solution h3{font-size:1.35rem}
+    .solution p{color:var(--soft);font-size:.94rem;flex:1}
+    .solution .btn{width:100%;margin-top:8px}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .benefit{padding:25px;border:1px solid var(--line);border-radius:14px;background:var(--panel);text-align:center}
+    .benefit .symbol{font-size:1.7rem;color:var(--gold);margin-bottom:10px}
+    .benefit h3{font-size:1.05rem;margin-bottom:7px}.benefit p{color:var(--muted);font-size:.9rem}
+    .assistant-wrap{max-width:790px;margin:auto;background:var(--panel);border:1px solid #4a4027;border-radius:18px;overflow:hidden;box-shadow:0 18px 60px #0008}
+    .assistant-head{display:flex;align-items:center;gap:14px;padding:20px 24px;border-bottom:1px solid var(--line);background:#111}
+    .avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#282318;border:1px solid var(--gold);color:var(--gold);font-size:1.35rem}
+    .assistant-head strong{display:block}.assistant-head small{color:var(--muted)}
+    .chat-body{padding:25px;min-height:240px}
+    .chat-intro,.chat-question{background:#222;border:1px solid #343434;border-radius:13px;padding:15px 17px;color:#fff;margin-bottom:18px}
+    .chat-question{display:none}
+    .options{display:flex;flex-wrap:wrap;gap:10px}
+    .option{background:transparent;color:white;border:1px solid var(--gold);border-radius:30px;padding:11px 17px;cursor:pointer;font:inherit;font-size:.9rem}
+    .option:hover,.option:focus{background:var(--gold);color:#111}
+    .chat-status{color:var(--muted);font-size:.8rem;margin-top:18px}
+    .chat-result{display:none;margin-top:18px;color:var(--soft)}
+    .faq{max-width:850px;margin:auto}
+    .faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:12px}
+    .faq summary{cursor:pointer;font-weight:600;list-style:none;padding-right:25px;position:relative}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary:after{content:"+";position:absolute;right:0;color:var(--gold);font-size:1.3rem;top:-4px}
+    .faq details[open] summary:after{content:"−"}
+    .faq details p{color:var(--soft);margin-top:13px;font-size:.94rem}
+    .contact{background:linear-gradient(135deg,#191919,#0d0d0d);border:1px solid #403820;border-radius:18px;padding:45px 25px;text-align:center}
+    .contact h2{font-size:clamp(1.7rem,4vw,2.5rem);margin-bottom:12px}.contact p{color:var(--soft);max-width:650px;margin:0 auto}
+    .footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.85rem;text-align:center}
+    .wa-float{position:fixed;right:22px;bottom:22px;z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#20c96b;color:#071b0e;text-decoration:none;font-size:1.65rem;box-shadow:0 8px 25px #0008}
+    @media(max-width:800px){
+      .nav{min-height:86px}.brand img{height:54px;max-width:175px}.brand-copy strong{font-size:1.25rem}.brand-copy span{font-size:.62rem}
+      .menu-toggle{display:block}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#101010;border-bottom:1px solid var(--line);padding:18px 22px 22px;flex-direction:column;align-items:stretch;gap:0}
+      .nav-links.open{display:flex}.nav-links a{padding:13px 4px;border-bottom:1px solid #242424}
+      .cards{grid-template-columns:1fr 1fr}.benefits{grid-template-columns:1fr}
+    }
+    @media(max-width:540px){
+      .container{width:min(100% - 30px,var(--max))}.brand{gap:8px}.brand img{height:48px;max-width:125px}.brand-copy strong{font-size:1.05rem}.brand-copy span{font-size:.52rem;letter-spacing:.1em}
+      .hero{padding:65px 0 55px}.hero-logo{width:min(250px,72vw);margin-bottom:28px}.section{padding:58px 0}.cards{grid-template-columns:1fr}.solution img{height:210px}
+      .chat-body{padding:18px}.assistant-head{padding:17px}.actions .btn{width:100%}.wa-float{right:15px;bottom:15px}
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="NCM Seguridad Integral, inicio">
+        <img src="logo-ncm.png" alt="Logo NCM Seguridad Integral" onerror="this.onerror=null;this.src='logo-ncm.jpg'">
+        <span class="brand-copy"><strong>NCM</strong><span>Seguridad Integral</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a><a href="#soluciones">Soluciones</a><a href="#camaras">Cámaras</a><a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <img class="hero-logo" src="logo-ncm.png" alt="NCM Seguridad Integral" onerror="this.onerror=null;this.src='logo-ncm.jpg'">
+        <div class="eyebrow">Protección inteligente · Mercedes, Soriano</div>
+        <h1>Seguridad pensada para proteger lo que más importa.</h1>
+        <p>Diseñamos e instalamos sistemas de alarma y videovigilancia para hogares y comercios. Tecnología confiable, asesoramiento profesional y soluciones adaptadas a cada espacio.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#asistente">Diseñá tu sistema</a>
+          <a class="btn btn-outline" href="https://wa.me/59893519215" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+        <div class="trust"><span>Instalación profesional</span><span>Sin abonos mensuales</span><span>Asesoramiento personalizado</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="soluciones">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Soluciones NCM</div><h2>Un sistema adecuado a tu espacio</h2><p>Estas opciones son ilustrativas. Cada proyecto se define según las características y necesidades del lugar.</p><div class="gold-line"></div></div>
+        <div class="cards">
+          <article class="solution">
+            <img src="kit-ajax-esencial.jpg" alt="Componentes de alarma inalámbrica Ajax" loading="lazy">
+            <div class="solution-content"><small>Protección inalámbrica</small><h3>Alarmas Ajax</h3><p>Central, sensores de movimiento y apertura para proteger tu hogar o comercio. Control y notificaciones desde el celular.</p><a class="btn btn-outline" href="#asistente">Diseñar este sistema</a></div>
+          </article>
+          <article class="solution">
+            <img src="kit-ajax-plus.jpg" alt="Sistema de alarma Ajax con sensores adicionales" loading="lazy">
+            <div class="solution-content"><small>Protección ampliable</small><h3>Seguridad integral</h3><p>Combiná detectores, sensores de acceso y accesorios según los ambientes y puntos vulnerables de tu propiedad.</p><a class="btn btn-outline" href="#asistente">Diseñar este sistema</a></div>
+          </article>
+          <article class="solution" id="camaras">
+            <img src="kit-ajax-total.jpg" alt="Equipamiento de seguridad y detección" loading="lazy">
+            <div class="solution-content"><small>Videovigilancia y más</small><h3>Cámaras y soluciones</h3><p>Consultanos por cámaras, monitoreo visual y alternativas para complementar la protección de tu propiedad.</p><a class="btn btn-outline" href="https://wa.me/59893519215?text=Hola%20NCM,%20quiero%20consultar%20por%20c%C3%A1maras." target="_blank" rel="noopener">Diseñar este sistema</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Ventajas de NCM">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">La experiencia NCM</div><h2>Profesionalismo en cada detalle</h2><p>Te acompañamos desde la elección de los equipos hasta la instalación y puesta en marcha.</p></div>
+        <div class="benefits">
+          <article class="benefit"><div class="symbol">◇</div><h3>Instalación profesional</h3><p>Equipos instalados y configurados para funcionar correctamente en tu espacio.</p></article>
+          <article class="benefit"><div class="symbol">⌖</div><h3>Diseño a medida</h3><p>La solución se adapta a tus accesos, ambientes y necesidades reales.</p></article>
+          <article class="benefit"><div class="symbol">◉</div><h3>Control desde tu celular</h3><p>Consultá opciones con acceso remoto y notificaciones según el sistema elegido.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="asistente">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Asistente virtual NCM</div><h2>Empecemos a diseñar tu sistema</h2><p>Respondé tres preguntas y prepararemos una consulta inicial para nuestro equipo.</p></div>
+        <div class="assistant-wrap">
+          <div class="assistant-head"><div class="avatar" aria-hidden="true">◖</div><div><strong>Asistente NCM</strong><small>Orientación inicial · 3 preguntas</small></div></div>
+          <div class="chat-body">
+            <div class="chat-intro" id="chatIntro">¡Hola! Te ayudo a orientar la solución de seguridad para tu espacio. Primero, contame:</div>
+            <div class="chat-question" id="chatQuestion"></div>
+            <div class="options" id="chatOptions"></div>
+            <p class="chat-status" id="chatStatus">Pregunta 1 de 3</p>
+            <div class="chat-result" id="chatResult"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="preguntas">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Información útil</div><h2>Preguntas frecuentes</h2><div class="gold-line"></div></div>
+        <div class="faq">
+          <details><summary>¿La instalación está incluida?</summary><p>Sí. Los sistemas se ofrecen con instalación profesional. Consultanos para conocer el alcance según tu propiedad.</p></details>
+          <details><summary>¿Hay que pagar abonos mensuales?</summary><p>No. Los equipos son tuyos y no tienen abonos mensuales obligatorios.</p></details>
+          <details><summary>¿Puedo controlar la alarma desde el celular?</summary><p>Sí. Los sistemas compatibles permiten activar, desactivar y recibir notificaciones desde una aplicación.</p></details>
+          <details><summary>¿En qué zonas trabajan?</summary><p>Brindamos servicio en Mercedes, Soriano y zonas cercanas. Escribinos para confirmar disponibilidad en tu localidad.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="contact"><div class="eyebrow">Hablemos de seguridad</div><h2>Tu propiedad merece una solución bien diseñada.</h2><p>Contanos qué necesitás proteger. Te asesoramos para encontrar una alternativa adecuada a tu hogar o comercio.</p><div class="actions"><a class="btn btn-gold" href="https://wa.me/59893519215" target="_blank" rel="noopener">Contactar a NCM por WhatsApp</a></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container">© <span id="year"></span> NCM Seguridad Integral · Mercedes, Soriano, Uruguay</div></footer>
+  <a class="wa-float" href="https://wa.me/59893519215" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">◉</a>
+
+  <script>
+    (function(){
+      const toggle=document.getElementById('menuToggle');
+      const links=document.getElementById('navLinks');
+      toggle.addEventListener('click',function(){
+        const open=links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded',String(open));
+        toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+        toggle.textContent=open?'×':'☰';
+      });
+      links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+        links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';
+      }));
+      document.getElementById('year').textContent=new Date().getFullYear();
+
+      const questions=[
+        {q:'¿Qué espacio querés proteger?',o:['Casa','Comercio','Apartamento']},
+        {q:'¿Cuántos accesos principales tiene?',o:['1 acceso','2 accesos','3 o más accesos']},
+        {q:'¿Qué tipo de instalación preferís?',o:['Inalámbrica','Cableada','Necesito asesoramiento']}
+      ];
+      const answers=[];let step=0;
+      const intro=document.getElementById('chatIntro'),question=document.getElementById('chatQuestion');
+      const options=document.getElementById('chatOptions'),status=document.getElementById('chatStatus'),result=document.getElementById('chatResult');
+      function render(){
+        const current=questions[step];question.style.display='block';question.textContent=current.q;
+        options.innerHTML='';
+        current.o.forEach(choice=>{
+          const b=document.createElement('button');b.type='button';b.className='option';b.textContent=choice;
+          b.addEventListener('click',()=>{answers.push(choice);step++;if(step<questions.length){render();}else{finish();}});
+          options.appendChild(b);
+        });
+        status.textContent='Pregunta '+(step+1)+' de '+questions.length;
+      }
+      function finish(){
+        intro.textContent='¡Perfecto! Ya tenemos una primera idea de lo que necesitás.';
+        question.style.display='none';options.innerHTML='';status.textContent='Consulta preparada';
+        const msg='Hola NCM, quiero asesoramiento para un sistema de seguridad. Espacio: '+answers[0]+'. Accesos: '+answers[1]+'. Instalación: '+answers[2]+'. ¿Podemos conversar?';
+        result.style.display='block';result.textContent='Tus respuestas: '+answers.join(' · ')+'.';
+        const a=document.createElement('a');a.className='btn btn-gold';a.style.marginTop='16px';a.href='https://wa.me/59893519215?text='+encodeURIComponent(msg);a.target='_blank';a.rel='noopener';a.textContent='Enviar respuestas por WhatsApp';result.appendChild(document.createElement('br'));result.appendChild(a);
+      }
+      render();
+    })();
+  </script>
+</body>
+</html>
